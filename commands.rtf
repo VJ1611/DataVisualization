@@ -1,0 +1,264 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red192\green0\blue0;\red112\green48\blue160;\red0\green0\blue255;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\ri-380\qc\partightenfactor0
+
+\f0\b\fs36 \cf2 Assignment #2\
+\pard\pardeftab720\ri-380\qc\partightenfactor0
+\cf3 CSc 8230 Advanced Operating Systems\
+\
+\pard\pardeftab720\ri-380\qc\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "mailto:vjavvaji1@student.gsu.edu"}}{\fldrslt 
+\i\fs32 \cf4 \ul \ulc4 vjavvaji1@student.gsu.edu}}
+\i\fs32  					\cf0 Venkatesh Javvaji\cf3 \
+\pard\pardeftab720\ri-380\qc\partightenfactor0
+
+\i0\b0\fs28 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1\fs24 \cf0 > housing_price <-read.csv(file.choose(), header=T)\
+> getwd()\
+[1] "/Users/venky/Desktop/R"\
+> attach(housing_price)\
+> names(housing_price)\
+ [1] "housenum"      "acre"          "acregroup"     "adj1998"      \
+ [5] "adj2007"       "adj2011"       "bedgroup"      "bedrooms"     \
+ [9] "bikescore"     "diff2014"      "distance"      "distgroup"    \
+[13] "garage_spaces" "garagegroup"   "housenum.1"    "latitude"     \
+[17] "longitude"     "no_full_baths" "no_half_baths" "no_rooms"     \
+[21] "pctchange"     "price1998"     "price2007"     "price2011"    \
+[25] "price2014"     "sfgroup"       "squarefeet"    "streetno"     \
+[29] "streetname"    "zip"           "Full.address"  "walkscore" \
+\
+> table(bedgroup)\
+bedgroup\
+1-2 beds   3 beds  4+ beds \
+      16       52       36 \
+> count <- table(bedgroup)\
+> count\
+bedgroup\
+1-2 beds   3 beds  4+ beds \
+      16       52       36 \
+> pie(count)\
+> pie(count, main="Pie chart showing the bed group of houses")\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > box()\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1 \cf0 >  housing_price <-read.csv(file.choose(), header=T)\
+> getwd()\
+[1] "/Users/venky/Desktop/R"\
+> attach(housing_price)\
+> names(housing_price)\
+> boxplot(price2007)\
+> quantile(price2007,probs= c(0,0.25,0.50,0.75,1))\
+     0%     25%     50%     75%    100% \
+141.500 226.750 264.250 304.125 695.000 \
+> boxplot(price2007,main="Box plot of price", ylab="Price in 2007", ylim=c(100,500), las=1)\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > boxplot(price2007~sfgroup, main="Price in 2007 according to the area", ylab="Price in 2007", xlab="Area of the house", las=1)\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1 \cf0 > setwd("/Users/venky/Desktop/R")\
+> housing.df=read.csv("housing_price.csv")\
+> housing.df[1:35,]\
+   housenum acre   acregroup  adj1998  adj2007  adj2011 bedgroup\
+> library(ggplot2)\
+\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > ggplot(housing.df, aes(squarefeet, price2007, color = factor(sfgroup)))+ geom_point()+ geom_line()+ xlab("squarefeet")+ ylab("Price in 2007")+ ggtitle("Cost of house according based on squarefeet")\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f0 \cf0 \
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f1 \cf0 > setwd("/Users/venky/Desktop/R")\
+> housing.df=read.csv("housing_price.csv")\
+> housing.df[1:15,]\
+> require(lattice)\
+> histogram(~bikescore, data = housing.df)\
+> histogram(~bikescore | distgroup, data = housing.df, xlab ="Bike score of all houses", main="Histogram showing the bike score")
+\f0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1 \cf0 > setwd("/Users/venky/Desktop/R")\
+> housing.df=read.csv("housing_price.csv")\
+> housing.df[1:35,]\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 bwplot(bikescore~no_rooms, data=housing.df, main="Graphics box using lattice", xlab="Number of rooms", ylab="bike score", xlim = c(2,10), ylim = quantile(bikescore,probs = c(0,0.25,0.5)))\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f0 \cf0 \
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f1 \cf0 > setwd("~/Desktop/R")\
+> housing.df=read.csv("housing_price.csv")\
+> library(ggplot2)\
+\
+Need help? Try the ggplot2 mailing list: http://groups.google.com/group/ggplot2.\
+\
+> library(ggplot2)\
+\
+> plot(housing.df$price2014, type="b", col="blue", xlab="House Number",ylab="Cost of house", main="Price of all houses in 2014")\
+> abline(h=200)\
+> text(60,250,label="Median Price", col="red")\
+> legend(40,800, legend = c("Median","High"), fill=c(4,2))\
+> arrows(90, 390, 100, 600, col="black")\
+> text(80,850, label="Highest Price ")
+\f0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1 \cf0 >  housing_price <-read.csv(file.choose(), header=T)\
+> getwd()\
+[1] "/Users/venky/Desktop/R"\
+> attach(housing_price)\
+> names(housing_price)\
+> class(distgroup)\
+[1] "factor"\
+> table(distgroup)\
+distgroup\
+      Closer Farther Away \
+          40           64 \
+> count_distgroup <- table(distgroup)\
+> count_distgroup\
+distgroup\
+      Closer Farther Away \
+          40           64 \
+> table(distgroup)/104\
+distgroup\
+      Closer Farther Away \
+   0.3846154    0.6153846 \
+> percent_distgroup <- table(distgroup)/104\
+> percent_distgroup\
+distgroup\
+      Closer Farther Away \
+   0.3846154    0.6153846 \
+> distgroup\
+Levels: Closer Farther Away\
+> barplot(count_distgroup)\
+> barplot(percent_distgroup)\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > barplot(percent_distgroup,main = "Classification of distance groups", xlab = "distance_groups", ylab="Percentage of distances")\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1 \cf0 > setwd("~/Desktop/R")\
+> sales.df=read.csv("Superstore Sales.csv")\
+> sales.df[1:30,]\
+> attach(sales.df)\
+> names(sales.df)\
+> require(lattice)\
+Loading required package: lattice\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > bwplot(Order.Quantity~Shipping.Cost, data=sales.df, main="Graphics box using lattice", xlab="cost of shipping", ylab="Order quantity", xlim = c(2,20), ylim = quantile(Order.Quantity,probs = c(0,0.25,0.5)))\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1 \cf0 > setwd("~/Desktop/R")\
+> sales.df=read.csv("Superstore Sales.csv")\
+> sales.df[1:30]\
+> attach(sales.df)\
+> names(sales.df)\
+> boxplot(Sales)\
+> quantile(Sales,probs= c(0,0.25,0.50,0.75,1))\
+       0%       25%       50%       75%      100% \
+    2.240   143.195   449.420  1709.320 89061.050 \
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > boxplot(Sales~Region, main="Sales in the superstore based on region", ylab="Sales", xlab="Region", las=1)\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1 \cf0 > setwd("/Users/venky/Desktop/R")\
+> sales.df=read.csv("Superstore Sales.csv")\
+> sales.df[1:10,]\
+> histogram(~Order.Quantity, data = sales.df)\
+> histogram(~Order.Quantity, data = sales.df, xlab ="Order Quantity", main="Histogram showing the order quantities")\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > histogram(~Order.Quantity | Ship.Mode, data = sales.df, xlab ="Order Quantity", main="Histogram showing the order quantities")\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+\cf0 > setwd("~/Desktop/R")\
+> library(ggplot2)\
+> sales.df=read.csv(\'93Superstore sales.csv")\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > sales.df[1:10,]\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+\cf0 > plot(sales.df$Profit, type="b", col="blue", xlab="Region",ylab="Order Quantity", main="Product Base Margin")\
+> abline(h=200)\
+> text(60,150,label="Median Profit", col="red")\
+> legend(40,600, legend = c("Median","High"), fill=c(4,2))\
+> arrows(60, 400, 80, 600, col="black")\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > text(80,600, label="Highest Profit ")\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1 \cf0 setwd("/Users/venky/Desktop/R")\
+> sales <-read.csv(file.choose(), header=T)\
+> attach(sales)\
+> names(sales)\
+> table(Ship.Mode)\
+Ship.Mode\
+Delivery Truck    Express Air    Regular Air \
+          1146            983           6270 \
+> count <- table(Ship.Mode)\
+> count\
+Ship.Mode\
+Delivery Truck    Express Air    Regular Air \
+          1146            983           6270 \
+> pie(count)\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > pie(count, main="Pie chart showing the shipping modes of a superstore")\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-380\partightenfactor0
+
+\f1 \cf0 > sales <-read.csv(file.choose(), header=T)\
+> attach(sales)\
+> names(sales)\
+> class(Order.Priority)\
+[1] "factor"\
+> table(Order.Priority)\
+Order.Priority\
+     Critical          High           Low        Medium Not Specified \
+         1608          1768          1720          1631          1672 \
+> count_op <- table(Order.Priority)\
+> table(Order.Priority)/8399\
+Order.Priority\
+     Critical          High           Low        Medium Not Specified \
+    0.1914514     0.2105013     0.2047863     0.1941898     0.1990713 \
+> percent_op <- table(Order.Priority)/8399\
+> percent_op\
+Order.Priority\
+     Critical          High           Low        Medium Not Specified \
+    0.1914514     0.2105013     0.2047863     0.1941898     0.1990713 \
+> barplot(count_op)\
+> barplot(percent_op)\
+\pard\pardeftab720\ri-380\qj\partightenfactor0
+\cf0 > barplot(percent_op,main = "Classification of Order Priority", xlab = "Order Priorities", ylab="Percentage of Order Priorities")\
+\
+> library(ggplot2)\
+> ggplot(sales.df, aes(Order.Quantity, Sales, color = factor(Region)))+ geom_point()+ geom_line()+ xlab("Order.Quantity")+ ylab("Sales")+ ggtitle("Superstore Sales")\}\
+Error: unexpected '\}' in "ggplot(sales.df, aes(Order.Quantity, Sales, color = factor(Region)))+ geom_point()+ geom_line()+ xlab("Order.Quantity")+ ylab("Sales")+ ggtitle("Superstore Sales")\}"\
+> ggplot(sales.df, aes(Order.Quantity, Sales, color = factor(Region)))+ geom_point()+ geom_line()+ xlab("Order.Quantity")+ ylab("Sales")+ ggtitle("Superstore Sales")
+\f0 \
+}

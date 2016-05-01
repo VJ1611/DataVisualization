@@ -1,0 +1,212 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww25400\viewh13720\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 > setwd("~/Desktop/R")\
+> sales.df=read.csv("Superstore Sales.csv")\
+> sales.df[1:30,]\
+   Row.ID Order.ID Order.Date Order.Priority Order.Quantity     Sales\
+1       1        3   10/13/10            Low              6   261.540\
+2      49      293    10/1/12           High             49 10123.020\
+3      50      293    10/1/12           High             27   244.570\
+4      80      483    7/10/11           High             30  4965.760\
+5      85      515    8/28/10  Not Specified             19   394.270\
+6      86      515    8/28/10  Not Specified             21   146.690\
+7      97      613    6/17/11           High             12    93.540\
+8      98      613    6/17/11           High             22   905.080\
+9     103      643    3/24/11           High             21  2781.820\
+10    107      678    2/26/10            Low             44   228.410\
+11    127      807   11/23/10         Medium             45   196.850\
+12    128      807   11/23/10         Medium             32   124.560\
+13    134      868     6/8/12  Not Specified             32   716.840\
+14    135      868     6/8/12  Not Specified             31  1474.330\
+15    149      933     8/4/12  Not Specified             15    80.610\
+16    160      995    5/30/11         Medium             46  1815.490\
+17    161      998   11/25/09  Not Specified             16   248.260\
+18    175     1154    2/14/12       Critical             44  4462.230\
+19    176     1154    2/14/12       Critical             11   663.784\
+20    203     1344    4/15/12            Low             15   834.904\
+21    204     1344    4/15/12            Low             18  2480.921\
+22    213     1412    3/12/10  Not Specified             13    59.030\
+23    214     1412    3/12/10  Not Specified             21    97.480\
+24    229     1539     3/9/11            Low             33   511.830\
+25    230     1539     3/9/11            Low             38   184.990\
+26    231     1540     8/4/12           High             30    80.900\
+27    249     1702     5/6/11           High             23    67.240\
+28    250     1761   12/23/10           High             25 12028.230\
+29    256     1792    11/8/10            Low             28   370.480\
+30    330     2275   10/21/12  Not Specified             49   278.000\
+   Discount      Ship.Mode  Profit Unit.Price Shipping.Cost\
+1      0.04    Regular Air -213.25      38.94         35.00\
+2      0.07 Delivery Truck  457.81     208.16         68.02\
+3      0.01    Regular Air   46.71       8.69          2.99\
+4      0.08    Regular Air 1198.97     195.99          3.99\
+5      0.08    Regular Air   30.94      21.78          5.94\
+6      0.05    Regular Air    4.43       6.64          4.95\
+7      0.03    Regular Air  -54.04       7.30          7.72\
+8      0.09    Regular Air  127.70      42.76          6.22\
+9      0.07    Express Air -695.26     138.14         35.00\
+10     0.07    Regular Air -226.36       4.98          8.33\
+11     0.01    Regular Air -166.85       4.28          6.18\
+12     0.04    Regular Air  -14.33       3.95          2.00\
+13     0.00    Regular Air  134.72      21.78          5.94\
+14     0.04    Regular Air  114.46      47.98          3.61\
+15     0.02    Regular Air   -4.72       5.28          2.99\
+16     0.03    Regular Air  782.91      39.89          3.04\
+17     0.07    Regular Air   93.80      15.74          1.39\
+18     0.04 Delivery Truck  440.72     100.98         26.22\
+19     0.25    Regular Air -481.04      71.37         69.00\
+20     0.06    Regular Air  -11.68      65.99          5.26\
+21     0.01    Regular Air  313.58     155.99          8.99\
+22     0.10    Express Air   26.92       3.69          0.50\
+23     0.05    Regular Air   -5.77       4.71          0.70\
+24     0.10    Regular Air -172.88      15.99         13.18\
+25     0.05    Regular Air -144.55       4.89          4.93\
+26     0.09    Regular Air    5.76       2.88          0.70\
+27     0.06    Regular Air    4.90       2.84          0.93\
+28     0.01 Delivery Truck -547.61     449.99         49.00\
+29     0.04    Regular Air   -5.45      13.48          4.51\
+30     0.08    Regular Air   41.67       6.08          1.17\
+        Customer.Name Province  Region Customer.Segment\
+1  Muhammed MacIntyre  Nunavut Nunavut   Small Business\
+2        Barry French  Nunavut Nunavut         Consumer\
+3        Barry French  Nunavut Nunavut         Consumer\
+4       Clay Rozendal  Nunavut Nunavut        Corporate\
+5      Carlos Soltero  Nunavut Nunavut         Consumer\
+6      Carlos Soltero  Nunavut Nunavut         Consumer\
+7        Carl Jackson  Nunavut Nunavut        Corporate\
+8        Carl Jackson  Nunavut Nunavut        Corporate\
+9      Monica Federle  Nunavut Nunavut        Corporate\
+10    Dorothy Badders  Nunavut Nunavut      Home Office\
+11    Neola Schneider  Nunavut Nunavut      Home Office\
+12    Neola Schneider  Nunavut Nunavut      Home Office\
+13        Carlos Daly  Nunavut Nunavut      Home Office\
+14        Carlos Daly  Nunavut Nunavut      Home Office\
+15      Claudia Miner  Nunavut Nunavut   Small Business\
+16    Neola Schneider  Nunavut Nunavut      Home Office\
+17   Allen Rosenblatt  Nunavut Nunavut   Small Business\
+18    Sylvia Foulston  Nunavut Nunavut      Home Office\
+19    Sylvia Foulston  Nunavut Nunavut      Home Office\
+20        Jim Radford  Nunavut Nunavut        Corporate\
+21        Jim Radford  Nunavut Nunavut        Corporate\
+22     Carlos Soltero  Nunavut Nunavut         Consumer\
+23     Carlos Soltero  Nunavut Nunavut         Consumer\
+24        Carl Ludwig  Nunavut Nunavut        Corporate\
+25        Carl Ludwig  Nunavut Nunavut        Corporate\
+26         Don Miller  Nunavut Nunavut      Home Office\
+27       Annie Cyprus  Nunavut Nunavut      Home Office\
+28        Carl Ludwig  Nunavut Nunavut        Corporate\
+29     Carlos Soltero  Nunavut Nunavut         Consumer\
+30      Grant Carroll  Nunavut Nunavut   Small Business\
+   Product.Category           Product.Sub.Category\
+1   Office Supplies         Storage & Organization\
+2   Office Supplies                     Appliances\
+3   Office Supplies Binders and Binder Accessories\
+4        Technology   Telephones and Communication\
+5   Office Supplies                     Appliances\
+6         Furniture             Office Furnishings\
+7   Office Supplies Binders and Binder Accessories\
+8   Office Supplies         Storage & Organization\
+9   Office Supplies         Storage & Organization\
+10  Office Supplies                          Paper\
+11  Office Supplies                          Paper\
+12  Office Supplies                   Rubber Bands\
+13  Office Supplies                     Appliances\
+14       Technology           Computer Peripherals\
+15  Office Supplies Binders and Binder Accessories\
+16        Furniture             Office Furnishings\
+17  Office Supplies                      Envelopes\
+18        Furniture                      Bookcases\
+19        Furniture                         Tables\
+20       Technology   Telephones and Communication\
+21       Technology   Telephones and Communication\
+22  Office Supplies                         Labels\
+23  Office Supplies                   Rubber Bands\
+24  Office Supplies Binders and Binder Accessories\
+25       Technology           Computer Peripherals\
+26  Office Supplies            Pens & Art Supplies\
+27  Office Supplies            Pens & Art Supplies\
+28       Technology                Copiers and Fax\
+29  Office Supplies         Storage & Organization\
+30  Office Supplies            Pens & Art Supplies\
+                                                                     Product.Name\
+1                                Eldon Base for stackable storage shelf, platinum\
+2                              1.7 Cubic Foot Compact "Cube" Office Refrigerators\
+3                             Cardinal Slant-D\\xa8 Ring Binder, Heavy Gauge Vinyl\
+4                                                                            R380\
+5                                                        Holmes HEPA Air Purifier\
+6                               G.E. Longer-Life Indoor Recessed Floodlight Bulbs\
+7                               Angle-D Binders with Locking Rings, Label Holders\
+8                                         SAFCO Mobile Desk Side File, Wire Frame\
+9                                           SAFCO Commercial Wire Shelving, Black\
+10                                                                      Xerox 198\
+11                                                                     Xerox 1980\
+12                                Advantus Map Pennant Flags and Round Head Tacks\
+13                                                       Holmes HEPA Air Purifier\
+14                              DS/HD IBM Formatted Diskettes, 200/Pack - Staples\
+15                              Wilson Jones 1" Hanging DublLock\\xa8 Ring Binders\
+16                                  Ultra Commercial Grade Dual Valve Door Closer\
+17                            #10-4 1/8" x 9 1/2" Premium Diagonal Seam Envelopes\
+18                                                    Hon 4-Shelf Metal Bookcases\
+19 Lesro Sheffield Collection Coffee Table, End Table, Center Table, Corner Table\
+20                                                                           g520\
+21                                                                         LX 788\
+22                                                                       Avery 52\
+23                                        Plymouth Boxed Rubber Bands by Plymouth\
+24                    GBC Pre-Punched Binding Paper, Plastic, White, 8-1/2" x 11"\
+25                             Maxell 3.5" DS/HD IBM-Formatted Diskettes, 10/Pack\
+26                                                                     Newell 335\
+27                              SANFORD Liquid Accent\\xaa Tank-Style Highlighters\
+28                                                             Canon PC940 Copier\
+29                     Tenex Personal Project File with Scoop Front Design, Black\
+30                                             Col-Erase\\xa8 Pencils with Erasers\
+   Product.Container Product.Base.Margin Ship.Date\
+1          Large Box                0.80  10/20/10\
+2         Jumbo Drum                0.58   10/2/12\
+3          Small Box                0.39   10/3/12\
+4          Small Box                0.58   7/12/11\
+5         Medium Box                0.50   8/30/10\
+6         Small Pack                0.37   8/30/10\
+7          Small Box                0.38   6/17/11\
+8          Small Box                  NA   6/18/11\
+9          Large Box                  NA   3/25/11\
+10         Small Box                0.38   2/26/10\
+11         Small Box                0.40  11/24/10\
+12          Wrap Bag                0.53  11/24/10\
+13        Medium Box                0.50    6/9/12\
+14        Small Pack                0.71   6/10/12\
+15         Small Box                0.37    8/4/12\
+16          Wrap Bag                0.53   5/31/11\
+17         Small Box                0.40  11/26/09\
+18         Jumbo Box                0.60   2/16/12\
+19         Large Box                0.68   2/16/12\
+20         Small Box                0.59   4/22/12\
+21         Small Box                0.58   4/19/12\
+22         Small Box                0.38   3/14/10\
+23          Wrap Bag                0.80   3/14/10\
+24         Small Box                0.37   3/11/11\
+25        Small Pack                0.66   3/14/11\
+26          Wrap Bag                0.56    8/6/12\
+27          Wrap Bag                0.54    5/7/11\
+28        Jumbo Drum                0.38  12/25/10\
+29         Small Box                0.59  11/13/10\
+30          Wrap Bag                0.56  10/22/12\
+> attach(sales.df)\
+> names(sales.df)\
+ [1] "Row.ID"               "Order.ID"            \
+ [3] "Order.Date"           "Order.Priority"      \
+ [5] "Order.Quantity"       "Sales"               \
+ [7] "Discount"             "Ship.Mode"           \
+ [9] "Profit"               "Unit.Price"          \
+[11] "Shipping.Cost"        "Customer.Name"       \
+[13] "Province"             "Region"              \
+[15] "Customer.Segment"     "Product.Category"    \
+[17] "Product.Sub.Category" "Product.Name"        \
+[19] "Product.Container"    "Product.Base.Margin" \
+[21] "Ship.Date"           \
+\
+> require(lattice)\
+Loading required package: lattice\
+> bwplot(Order.Quantity~Shipping.Cost, data=sales.df, main="Graphics box using lattice", xlab="cost of shipping", ylab="Order quantity", xlim = c(2,20), ylim = quantile(Order.Quantity,probs = c(0,0.25,0.5)))}

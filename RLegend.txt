@@ -1,0 +1,11 @@
+> setwd("~/Desktop/R")
+> housing.df=read.csv("housing_price.csv")
+> library(ggplot2)
+Need help? Try the ggplot2 mailing list: http://groups.google.com/group/ggplot2.
+> library(ggplot2)
+> plot(housing.df$price2014, type="b", col="blue", xlab="House Number",ylab="Cost of house", main="Price of all houses in 2014")
+> abline(h=200)
+> text(60,250,label="Median Price", col="red")
+> legend(40,800, legend = c("Median","High"), fill=c(4,2))
+> arrows(90, 390, 100, 600, col="black")
+> text(80,850, label="Highest Price ")

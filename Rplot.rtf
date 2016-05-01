@@ -1,0 +1,65 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 >  housing_price <-read.csv(file.choose(), header=T)\
+> getwd()\
+[1] "/Users/venky/Desktop/R"\
+> attach(housing_price)\
+> names(housing_price)\
+ [1] "housenum"      "acre"          "acregroup"     "adj1998"      \
+ [5] "adj2007"       "adj2011"       "bedgroup"      "bedrooms"     \
+ [9] "bikescore"     "diff2014"      "distance"      "distgroup"    \
+[13] "garage_spaces" "garagegroup"   "housenum.1"    "latitude"     \
+[17] "longitude"     "no_full_baths" "no_half_baths" "no_rooms"     \
+[21] "pctchange"     "price1998"     "price2007"     "price2011"    \
+[25] "price2014"     "sfgroup"       "squarefeet"    "streetno"     \
+[29] "streetname"    "zip"           "Full.address"  "walkscore"    \
+> class(distgroup)\
+[1] "factor"\
+> table(distgroup)\
+distgroup\
+      Closer Farther Away \
+          40           64 \
+> count_distgroup <- table(distgroup)\
+> count_distgroup\
+distgroup\
+      Closer Farther Away \
+          40           64 \
+> table(distgroup)/104\
+distgroup\
+      Closer Farther Away \
+   0.3846154    0.6153846 \
+> percent_distgroup <- table(distgroup)/104\
+> percent_distgroup\
+distgroup\
+      Closer Farther Away \
+   0.3846154    0.6153846 \
+> distgroup\
+  [1] Farther Away Farther Away Closer       Farther Away Farther Away\
+  [6] Farther Away Closer       Closer       Farther Away Farther Away\
+ [11] Farther Away Farther Away Farther Away Closer       Closer      \
+ [16] Farther Away Farther Away Farther Away Closer       Closer      \
+ [21] Farther Away Closer       Farther Away Farther Away Farther Away\
+ [26] Farther Away Closer       Farther Away Farther Away Farther Away\
+ [31] Farther Away Farther Away Farther Away Closer       Closer      \
+ [36] Farther Away Farther Away Closer       Closer       Farther Away\
+ [41] Closer       Farther Away Farther Away Closer       Farther Away\
+ [46] Farther Away Farther Away Farther Away Farther Away Farther Away\
+ [51] Farther Away Farther Away Farther Away Closer       Farther Away\
+ [56] Farther Away Closer       Closer       Closer       Farther Away\
+ [61] Closer       Closer       Closer       Farther Away Farther Away\
+ [66] Closer       Closer       Farther Away Closer       Closer      \
+ [71] Closer       Closer       Farther Away Farther Away Farther Away\
+ [76] Farther Away Closer       Farther Away Farther Away Farther Away\
+ [81] Farther Away Farther Away Farther Away Closer       Farther Away\
+ [86] Closer       Closer       Closer       Farther Away Farther Away\
+ [91] Farther Away Closer       Closer       Closer       Closer      \
+ [96] Closer       Closer       Farther Away Farther Away Farther Away\
+[101] Farther Away Closer       Farther Away Farther Away\
+Levels: Closer Farther Away\
+> barplot(count_distgroup)\
+> barplot(percent_distgroup)\
+> barplot(percent_distgroup,main = "Classification of distance groups", xlab = "distance_groups", ylab="Percentage of distances")}

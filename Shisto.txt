@@ -1,0 +1,78 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 > setwd("/Users/venky/Desktop/R")\
+> sales.df=read.csv("Superstore Sales.csv")\
+> sales.df[1:10,]\
+   Row.ID Order.ID Order.Date Order.Priority Order.Quantity    Sales\
+1       1        3   10/13/10            Low              6   261.54\
+2      49      293    10/1/12           High             49 10123.02\
+3      50      293    10/1/12           High             27   244.57\
+4      80      483    7/10/11           High             30  4965.76\
+5      85      515    8/28/10  Not Specified             19   394.27\
+6      86      515    8/28/10  Not Specified             21   146.69\
+7      97      613    6/17/11           High             12    93.54\
+8      98      613    6/17/11           High             22   905.08\
+9     103      643    3/24/11           High             21  2781.82\
+10    107      678    2/26/10            Low             44   228.41\
+   Discount      Ship.Mode  Profit Unit.Price Shipping.Cost\
+1      0.04    Regular Air -213.25      38.94         35.00\
+2      0.07 Delivery Truck  457.81     208.16         68.02\
+3      0.01    Regular Air   46.71       8.69          2.99\
+4      0.08    Regular Air 1198.97     195.99          3.99\
+5      0.08    Regular Air   30.94      21.78          5.94\
+6      0.05    Regular Air    4.43       6.64          4.95\
+7      0.03    Regular Air  -54.04       7.30          7.72\
+8      0.09    Regular Air  127.70      42.76          6.22\
+9      0.07    Express Air -695.26     138.14         35.00\
+10     0.07    Regular Air -226.36       4.98          8.33\
+        Customer.Name Province  Region Customer.Segment\
+1  Muhammed MacIntyre  Nunavut Nunavut   Small Business\
+2        Barry French  Nunavut Nunavut         Consumer\
+3        Barry French  Nunavut Nunavut         Consumer\
+4       Clay Rozendal  Nunavut Nunavut        Corporate\
+5      Carlos Soltero  Nunavut Nunavut         Consumer\
+6      Carlos Soltero  Nunavut Nunavut         Consumer\
+7        Carl Jackson  Nunavut Nunavut        Corporate\
+8        Carl Jackson  Nunavut Nunavut        Corporate\
+9      Monica Federle  Nunavut Nunavut        Corporate\
+10    Dorothy Badders  Nunavut Nunavut      Home Office\
+   Product.Category           Product.Sub.Category\
+1   Office Supplies         Storage & Organization\
+2   Office Supplies                     Appliances\
+3   Office Supplies Binders and Binder Accessories\
+4        Technology   Telephones and Communication\
+5   Office Supplies                     Appliances\
+6         Furniture             Office Furnishings\
+7   Office Supplies Binders and Binder Accessories\
+8   Office Supplies         Storage & Organization\
+9   Office Supplies         Storage & Organization\
+10  Office Supplies                          Paper\
+                                          Product.Name\
+1     Eldon Base for stackable storage shelf, platinum\
+2   1.7 Cubic Foot Compact "Cube" Office Refrigerators\
+3  Cardinal Slant-D\\xa8 Ring Binder, Heavy Gauge Vinyl\
+4                                                 R380\
+5                             Holmes HEPA Air Purifier\
+6    G.E. Longer-Life Indoor Recessed Floodlight Bulbs\
+7    Angle-D Binders with Locking Rings, Label Holders\
+8              SAFCO Mobile Desk Side File, Wire Frame\
+9                SAFCO Commercial Wire Shelving, Black\
+10                                           Xerox 198\
+   Product.Container Product.Base.Margin Ship.Date\
+1          Large Box                0.80  10/20/10\
+2         Jumbo Drum                0.58   10/2/12\
+3          Small Box                0.39   10/3/12\
+4          Small Box                0.58   7/12/11\
+5         Medium Box                0.50   8/30/10\
+6         Small Pack                0.37   8/30/10\
+7          Small Box                0.38   6/17/11\
+8          Small Box                  NA   6/18/11\
+9          Large Box                  NA   3/25/11\
+10         Small Box                0.38   2/26/10\
+> histogram(~Order.Quantity, data = sales.df)\
+> histogram(~Order.Quantity, data = sales.df, xlab ="Order Quantity", main="Histogram showing the order quantities")\
+> histogram(~Order.Quantity | Ship.Mode, data = sales.df, xlab ="Order Quantity", main="Histogram showing the order quantities")}
